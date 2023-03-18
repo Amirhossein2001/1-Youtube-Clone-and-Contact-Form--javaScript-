@@ -1,0 +1,533 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	padding-top: 75px;
+	padding-left: 96px;
+	padding-right: 24px;
+	background-color: rgb(249, 249, 249);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+@font-face {
+	font-family:Roboto;
+	src: url(../fonts/EBGaramond-Italic-VariableFont_wght.ttf);
+	font-weight: 500;
+}
+
+p{
+	font-family: Roboto;
+	font-size: 15px;
+}
+
+
+
+
+
+.thumbnail{
+	width: 100%;
+	
+	
+}
+
+.searchBar{
+	font-size: 20px;
+	display: block;
+	width: 0;
+}
+
+
+
+.thumbnailRow{
+	margin-bottom: 12px;
+	position: relative;
+}
+
+.videoTime{
+	font-family: Roboto;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	position: absolute;
+	bottom: 5px;
+	right: 8px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom:4px;
+	border-radius: 2px;
+}
+
+.videoTitle{
+	margin-bottom: 14px;
+	line-height: 20px;
+
+}
+
+.videoAuthor,
+.videoStats{
+	margin-bottom: 6px;
+	font-size: 14px;
+	color:rgb(96,96,96) ;
+}
+
+
+
+.channelPicture{
+	width: 50px;
+	vertical-align: top;
+}
+
+.channelPicture img{
+	width: 36px;
+	border-radius: 50px;
+}
+
+.videoInfo{
+	width: 200px;
+}
+
+.videoInfoGrid{
+	display: grid;
+	grid-template-columns:50px 1fr ;
+}
+
+.firstThumbnail{
+	height: 190px;
+	display: inherit;
+}
+
+.videoGrid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 16px;
+	row-gap: 40px;
+}
+
+@media (max-width:750px){
+	.videoGrid{
+		grid-template-columns: 1fr 1fr ;
+	}
+}
+
+@media (min-width:1200px){
+	.videoGrid{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+.header{
+	height: 55px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	background-color: #fff;
+	border-bottom: 1px solid rgb(227, 227, 227) ;
+	z-index: 1;
+
+
+	
+}
+
+.leftSection{
+	
+	display:inherit;
+	align-items: center;
+
+}
+.middleSection{
+	flex: 1;
+	max-width: 515px;
+	margin-left: 70px;
+	margin-right: 35px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+
+}
+
+.rightSection{
+	width: 180px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 20px;
+	margin-top: 2px;
+	flex-shrink: 0;
+	
+}
+
+.hamburgerMenu img{
+	height: 24px;
+	margin-left: 24px;
+	margin-right: 20px;
+	cursor: pointer;
+
+
+
+}
+
+.youtubeLogo img{
+	height: 20px;
+}
+
+.searchButton button{
+  height: 47px;
+  background-color: rgb(240, 240, 240);
+  border: solid 1px rgb(192, 192, 192);
+  margin-right: 10px ;
+  position: relative;
+}
+
+.searchButton .underText{
+	position: absolute;
+	background-color: gray;
+	color: rgb(255, 255, 255);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 2px;
+	font-size:12px ;
+	bottom: -30px;
+	left: 10px;
+	opacity: 0;
+	transition:opacity 0.2s ;
+	pointer-events: none;
+
+}
+
+.searchButton button:hover .underText{
+	opacity: 1;
+
+}
+
+.searchButton button img{
+	height: 25px;
+	width: 60px;
+	margin-top: 4px;
+	
+}
+
+.micButton .underText{
+	position: absolute;
+	background-color: gray;
+	color: rgb(255, 255, 255);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 2px;
+	font-size:12px ;
+	bottom: -40px;
+	left: -40px;
+	opacity: 0;
+	transition:opacity 0.2s ;
+	pointer-events: none;
+	width: 130px;
+
+}
+
+.micButton button:hover .underText{
+	opacity: 1;
+	
+
+}
+
+
+.micButton button{
+	height: 47px;
+	width: 47px;
+	border-radius:23.5px ;
+	border: none;
+	background-color: rgb(245, 245, 245);
+	position: relative;
+}
+
+.micButton button img{
+	height: 25px;
+	margin-top: 4px;
+
+
+	
+}
+
+.searchBar{
+	flex: 1;
+	height: 43px;
+	padding-left: 10px;
+	font-size: 15px;
+	border-width:1px; 
+	border-style: solid;
+	border-color: rgb(192, 192, 192);
+	border-radius: 2px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	
+}
+
+.searchBar::placeholder{
+	font-family:Roboto ;
+	
+}
+
+
+.uploadIcon img{
+	height: 24px;
+
+}
+
+
+.youtubeApps img{
+	height: 24px;
+
+
+}
+
+.notificationIcon{
+	position: relative;
+
+}
+
+.bellNum{
+	font-family: Roboto;
+	font-size: 15px;
+	background-color: rgb(188, 5, 5);
+	color: #fff;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	right: -5px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-radius: 10px;
+
+}
+
+
+.notificationIcon img{
+   height: 24px;
+
+}
+
+.profilePicture{
+   margin-top: 3px;
+}
+
+.profilePicture img{
+	height: 32px;
+	border-radius:16px;
+
+}
+
+.sideBar{
+	background-color: #fff;
+	position: fixed;
+	left: 0px;
+	top:55px ;
+	bottom: 0px;
+	width: 72px;
+	z-index: 101;
+	padding-top: 5px;
+}
+
+.sidebarLink{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 76px;
+	flex-direction: column;
+	cursor: pointer;
+	
+	
+}
+
+.sidebarLink:hover{
+	background-color: lightgray;
+	margin-left: 5px;
+	width: 66px;
+	transition: 0.3s;
+}
+
+.sidebarLink:hover .sidebarText{
+	margin-left: -4px;
+	transition: 0.3s;
+
+}
+
+.sidebarLink:active{
+	background-color: rgb(187, 25, 25);
+	margin-left: 5px;
+	width: 66px;
+	transition: 0.3s;
+}
+
+.sidebarLink:active .sidebarText{
+	margin-left: -4px;
+	transition: 0.3s;
+
+}
+
+.sideBar img{
+	height: 24px;
+
+} 
+
+.sidebarText p{
+	
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.sidebarText .subscriptions{
+	
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: 8px;
+}
+
+.navigation{
+	position: fixed;
+	inset: 20px;
+	background-color: rgb(65, 65, 65);
+	
+	z-index: 1000;
+	left: 0;
+	top: 60px;
+	border-left: 10px solid #fff;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 651px;
+	transition: 1s;
+	width: 0px;
+}
+
+.toggle{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	background-color: transparent;
+	border-radius: 50%;
+}
+
+
+
+
+.navigation.active{
+width: 400px;
+}
+
+
+.imageCover{
+	padding-top: 10px;
+	padding-left: 9px;
+}
+
+ul li{
+	line-height: 30px;
+
+}
+
+
+ul li a{
+	text-decoration: none;
+	display: flex;
+	
+
+
+}
+
+ul li a .icon{
+	display: inline-block;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+
+
+
+
+ul li a .icon img{
+	height: 22px;
+	padding-top: 6px;
+	
+}
+
+ul li a .title{
+	line-height: 40px;
+	
+}
+
+
+
+
+
+
+.title{
+	color: red;
+	font-size: 20px;
+	font-family: Roboto;
+	
+}
+
+.title:hover{
+	color: whitesmoke;
+	transition: 0.4;
+}
+
+.imageCover img{
+	cursor: pointer;
+  
+}
